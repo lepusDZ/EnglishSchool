@@ -19,8 +19,9 @@ from django.urls import path, include
 from django.contrib import admin
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('Main.urls')),
+    path('admin/', admin.site.urls), # Admin
+    path('', include(('Main.urls','main'))),  # Landing + other website pages
+    path('', include(('User.urls','user'))), # User registration, login, profile etc
     path('__debug__/', include('debug_toolbar.urls')),
 ]
 
