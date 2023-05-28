@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'main:home' %}">Test</a>
+        <a class="navbar-brand" href="{% url 'main:home' %}">Home</a>
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -16,9 +16,23 @@
                     <a class="nav-link" href="{% url 'main:home' %}">Main</a>
                 </li>
             </ul>
-            <span class="navbar-text">
+
+            {% if user.is_authenticated %}
+      
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Welcome, {{ user.username }}</a>
+            </li>
+      
+            {% else %}
+            
+            <li class="navbar-text">
                 <a href="{% url 'user:login' %}">Login</a> | <a href="{% url 'user:register' %}">Register</a>
-            </span>
+            </li>
+
+            {% endif %}
         </div>
     </div>
 </nav>

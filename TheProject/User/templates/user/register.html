@@ -6,6 +6,15 @@
 	<h1>Register</h1>
 	<form method="post">
 		{% csrf_token %}
+
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        
 		{{ register_form.as_p }}                    
 		<button class="btn btn-primary" type="submit">Register</button>
 	</form>
