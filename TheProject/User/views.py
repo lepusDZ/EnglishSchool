@@ -3,6 +3,7 @@ from .forms import *
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from .models import CustomUser
 
 
 def register_request(request):
@@ -41,3 +42,8 @@ def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("main:home")
+
+def user_profile(request):
+    user = request.user
+    fields = [(field.verbose_name, getattr(user, field.name)) for field in user._meta.fields]
+    return render(request, template_name='user/profile.html', context={'user': user, 'fields': fields})
