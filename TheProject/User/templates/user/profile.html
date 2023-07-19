@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 
-{% block content %}      
-
-<h1>User Profile</h1>
-<ul>
-  {% for field_name, field_value in fields %}
-    <li>{{ field_name }}: {{ field_value }}</li>
-  {% endfor %}
-</ul>
-
+{% block content %}
+  <h1>User Profile</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for field_name, field_value in fields %}
+        <tr>
+          <td>{{ field_name }}</td>
+          <td>{{ field_value }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock content %}

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -10,4 +11,17 @@
 </ul>
 {% endif %}
 
+<div class="photo-list">
+    <h2>Photos</h2>
+    <ul>
+        {% for photo in photos %}
+        <li>
+            <img src="media/{{ photo.photo }}" alt={{ photo.caption }} width="300" height="300"> <!-- FIX src + write photo details -->  
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
 {% endblock content %}
+
+<script src="{% static 'TheProject/Main/static/js/photo.js' %}"></script>   <!-- FIX JS with Kulich -->  
