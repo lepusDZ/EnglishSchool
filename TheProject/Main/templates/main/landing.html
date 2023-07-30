@@ -1,13 +1,47 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <div class="col-md-12">
+    <center>
+      <h2>Photos</h2>
+    </center>
+    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for photo in photos %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <a href="{{ photo.photo.url }}"
+               data-title="{{ photo.caption }}"
+               data-toggle="lightbox">
+              <img src="{{ photo.photo.url }}"
+                   alt="{{ photo.caption }}"
+                   class="img-fluid"
+                   width=""
+                   height="">
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="carousel-control-prev"
+              type="button"
+              data-bs-target="#photoCarousel"
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next"
+              type="button"
+              data-bs-target="#photoCarousel"
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 {% endblock content %}

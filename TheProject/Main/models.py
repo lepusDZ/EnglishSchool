@@ -3,22 +3,15 @@ from django_quill.fields import QuillField
 from django.urls import reverse
 
 class Main(models.Model):
-    title = models.CharField(max_length = 150, blank = True)
+    title = models.CharField(max_length=150, blank=True)
 
     def __str__(self):
         return self.title
-    
-class Dish(models.Model):
-    
-    def __str__(self):
-        return self.title
-    
-class Category(models.Model):
-    
-    def __str__(self):
-        return self.title
 
-class Ingredients(models.Model):
+class Photo(models.Model):
+    photo = models.ImageField(upload_to='photos/')  # Specify the upload directory for the images
+    caption = models.CharField(max_length=255, blank=True)  # Add a field for a caption (optional)
+    created_at = models.DateTimeField(auto_now_add=True)  # Add a field to store the creation timestamp
 
     def __str__(self):
-        return self.title
+        return f"Photo {self.id}"
