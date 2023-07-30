@@ -1,7 +1,54 @@
-body{
-    background-color: #fefefe;
-
+/* style.css */
+body {
+    background-color: #232C33;
+    color: white;
 }
 
-.ql-editor { height: 150px }
-.quill-editor { height: 150px }
+.ql-editor {
+    height: 150px;
+}
+
+.quill-editor {
+    height: 150px;
+}
+
+.lightbox {
+    max-width: 400px;
+    height: auto;
+}
+
+.navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #c2c2c2;
+    display: flex;
+    /* Use 'flex' instead of 'display: flex' */
+    flex-direction: row;
+    background-color: #fff;
+}
+
+.navbar-brand img {
+    padding-left: 10px;
+}
+
+.carousel-inner img {
+    max-width: 300px;
+    /* Set the maximum width for the images */
+    max-height: 200px;
+    /* Set the maximum height for the images */
+    margin: auto;
+    /* Center the images horizontally within the carousel */
+    display: block;
+    /* Ensure the images are displayed as block elements */
+}
+
+/* Adjust the carousel container size */
+#photoCarousel {
+    max-width: 600px;
+    /* Set the maximum width for the carousel container */
+    margin: 0 auto;
+    /* Center the carousel horizontally on the page */
+    padding: 10px;
+    /* Optional: Add some padding to the carousel container */
+}

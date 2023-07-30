@@ -1,1 +1,0 @@
-// Detail view of photo + photo list
