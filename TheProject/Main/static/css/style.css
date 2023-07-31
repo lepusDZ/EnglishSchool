@@ -1,38 +1,46 @@
 /* style.css */
+
 body {
     background-color: #232C33;
     color: white;
-}
-
-.ql-editor {
+  }
+  
+  .ql-editor {
     height: 150px;
-}
-
-.quill-editor {
+  }
+  
+  .quill-editor {
     height: 150px;
-}
-
-.lightbox {
+  }
+  
+  .lightbox {
     max-width: 400px;
     height: auto;
-}
-
-.navbar {
+  }
+  
+  .navbar {
     width: 100%;
     margin: 0;
     padding: 0;
-    border: 1px solid #c2c2c2;
     display: flex;
+    background-color: white;
     /* Use 'flex' instead of 'display: flex' */
-    flex-direction: row;
-    background-color: #fff;
+    flex-direction: row; /* Set the background of the .navbar to transparent */
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+    border-bottom-left-radius: 15px; /* Add rounded corners to the navbar */
+    border-bottom-right-radius: 15px;
+    height: 55px; /* Set the height of the navbar as needed */ /* Adjust the path to your navbar background image */
+    background-size: cover; /* Scale the background image to cover the navbar */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center ; /* Center the background image */
 }
-
-.navbar-brand img {
+  
+  .navbar-brand img {
     padding-left: 10px;
-}
-
-.carousel-inner img {
+  }
+  
+  .carousel-inner img {
     max-width: 300px;
     /* Set the maximum width for the images */
     max-height: 200px;
