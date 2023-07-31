@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'TheProject.urls'
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'UTC'
 
@@ -126,6 +127,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Main/static'),
+    os.path.join(BASE_DIR, 'User/static')
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -138,3 +140,7 @@ INTERNAL_IPS = [
 
 
 AUTH_USER_MODEL = 'User.CustomUser'
+
+LANGUAGES = [
+    ('uk', 'Ukrainian'),
+]
