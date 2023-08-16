@@ -1,40 +1,80 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends 'base.html' %}
+
+{% block head %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/email.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+{% endblock %}
+
 {% block content %}
-  <div class="col-md-12">
-    <center>
-      <h2>Photos</h2>
-    </center>
-    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% for photo in photos %}
-          <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <a href="{{ photo.photo.url }}"
-               data-title="{{ photo.caption }}"
-               data-toggle="lightbox">
-              <img src="{{ photo.photo.url }}"
-                   alt="{{ photo.caption }}"
-                   class="img-fluid"
-                   width=""
-                   height="">
-            </a>
-          </div>
-        {% endfor %}
+  <div class="container-fluid">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-6 order-md-1 d-flex align-items-center">
+        <div class="maintext justify-content-center">
+          <blockquote class="blockquote quotemain text-end rounded">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <p class="blockquote-footer">
+              Someone famous in <cite>Source Title</cite>
+            </p>
+          </blockquote>
+          <p class="text-center lead rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui. Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</p>
+        </div>
       </div>
-      <button class="carousel-control-prev"
-              type="button"
-              data-bs-target="#photoCarousel"
-              data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next"
-              type="button"
-              data-bs-target="#photoCarousel"
-              data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="col-md-6 order-sm-2 d-flex align-items-center justify-content-center">
+        <img alt="Main" src="https://picsum.photos/536/354.jpg" class="rounded img-fluid" style="max-width: 100%" width="100%" height="auto" />
+      </div>
     </div>
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3 class="text-center">Наши учителя</h3>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <div class="card bg-dark text-white text-center">
+          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
+          <div class="card-img-overlay d-flex flex-column justify-content-end">
+            <h5 class="card-title">Dima</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-dark text-white text-center">
+          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
+          <div class="card-img-overlay d-flex flex-column justify-content-end">
+            <h5 class="card-title">Dima</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-dark text-white text-center">
+          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
+          <div class="card-img-overlay d-flex flex-column justify-content-end">
+            <h5 class="card-title">Dima</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12">
+          {% include 'inc/_reviews.html' %}
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h5 class="text-center">Выберите пакет:</h5>
+        {% include 'inc/_email.html' %}
+      </div>
+    </div>
+    {% include 'inc/_gallery.html' %}
   </div>
-{% endblock content %}
+{% endblock %}

@@ -1,60 +1,154 @@
 /* style.css */
+
 body {
-    background-color: #232C33;
-    color: white;
-  }
-  .ql-editor {
-    height: 150px;
-  }
-  
-  .quill-editor {
-    height: 150px;
-  }
-  
-  .lightbox {
-    max-width: 400px;
-    height: auto;
-  }
-  
-  .navbar {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background-color: white;
-    /* Use 'flex' instead of 'display: flex' */
-    flex-direction: row; /* Set the background of the .navbar to transparent */
-    justify-content: center; /* Horizontally center the items */
-    align-items: center; /* Vertically center the items */
-    border-bottom-left-radius: 15px; /* Add rounded corners to the navbar */
-    border-bottom-right-radius: 15px;
-    height: 55px; /* Set the height of the navbar as needed */ /* Adjust the path to your navbar background image */
-    background-size: cover; /* Scale the background image to cover the navbar */
-    background-repeat: no-repeat; /* Prevent the background image from repeating */
-    background-position: center ; /* Center the background image */
+  background-color: #232C33;
+  color: white;
 }
-  
-  .navbar-brand img {
-    padding-left: 10px;
-  }
-  
-  .carousel-inner img {
-    max-width: 300px;
-    /* Set the maximum width for the images */
-    max-height: 200px;
-    /* Set the maximum height for the images */
-    margin: auto;
-    /* Center the images horizontally within the carousel */
-    display: block;
-    /* Ensure the images are displayed as block elements */
+
+.ql-editor {
+  height: 150px;
+}
+
+.quill-editor {
+  height: 150px;
+}
+
+.lightbox {
+  max-width: 400px;
+  height: auto;
+}
+
+.fa-instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+  --bs-btn-color: white;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: white;
+  /* Use 'flex' instead of 'display: flex' */
+  flex-direction: row;
+  /* Set the background of the .navbar to transparent */
+  justify-content: center;
+  /* Horizontally center the items */
+  align-items: center;
+  /* Vertically center the items */
+  border-bottom-left-radius: 15px;
+  /* Add rounded corners to the navbar */
+  border-bottom-right-radius: 15px;
+  height: 55px;
+  /* Set the height of the navbar as needed */
+  /* Adjust the path to your navbar background image */
+  background-size: cover;
+  /* Scale the background image to cover the navbar */
+  background-repeat: no-repeat;
+  /* Prevent the background image from repeating */
+  background-position: center;
+  /* Center the background image */
+}
+
+.navbar-brand img {
+  padding-left: 10px;
+}
+
+.carousel-inner img {
+  max-width: 300px;
+  /* Set the maximum width for the images */
+  max-height: 200px;
+  /* Set the maximum height for the images */
+  margin: auto;
+  /* Center the images horizontally within the carousel */
+  display: block;
+  /* Ensure the images are displayed as block elements */
 }
 
 /* Adjust the carousel container size */
 #photoCarousel {
-    max-width: 600px;
-    /* Set the maximum width for the carousel container */
-    margin: 0 auto;
-    /* Center the carousel horizontally on the page */
-    padding: 10px;
-    /* Optional: Add some padding to the carousel container */
+  max-width: 600px;
+  /* Set the maximum width for the carousel container */
+  margin: 0 auto;
+  /* Center the carousel horizontally on the page */
+  padding: 10px;
+  /* Optional: Add some padding to the carousel container */
 }
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: visible;
+  opacity: 1;
+}
+
+#demo {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+img.zoom {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+}
+
+
+.transition {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.modal-header {
+
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #000;
+}
+
+.modal-footer {
+  display: none;
+}
+
