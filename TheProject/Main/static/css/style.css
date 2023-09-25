@@ -5,26 +5,34 @@ body {
   color: white;
 }
 
-.ql-editor {
-  height: 150px;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.quill-editor {
-  height: 150px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Open Sans', sans-serif;
+  /*font-weight: lighter;*/
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.lightbox {
-  max-width: 400px;
-  height: auto;
-}
-
-.fa-instagram {
-  background: #f09433;
-  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
-  --bs-btn-color: white;
+.navbar-collapse {
+  background: #f9f9f9;
+  z-index: 1000;
 }
 
 .navbar {
@@ -32,7 +40,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  background-color: white;
+  background-color: #f9f9f9;
   /* Use 'flex' instead of 'display: flex' */
   flex-direction: row;
   /* Set the background of the .navbar to transparent */
@@ -40,9 +48,9 @@ body {
   /* Horizontally center the items */
   align-items: center;
   /* Vertically center the items */
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 10px;
   /* Add rounded corners to the navbar */
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 10px;
   height: 55px;
   /* Set the height of the navbar as needed */
   /* Adjust the path to your navbar background image */
@@ -52,7 +60,9 @@ body {
   /* Prevent the background image from repeating */
   background-position: center;
   /* Center the background image */
+  z-index: 1000; /* Adjust this value as needed */
 }
+
 
 .navbar-brand img {
   padding-left: 10px;
@@ -84,10 +94,6 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.row {
-  margin-bottom: 15px;
 }
 
 .card-img-overlay {
@@ -152,3 +158,85 @@ img.zoom {
   display: none;
 }
 
+
+.map {
+  position: relative;
+  padding-bottom: 30%;
+  height: 0;
+  overflow: hidden;
+}
+
+.btnWrap a {
+  -webkit-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.btnWrap a.btn-0 {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(249, 249, 249, 0.558) 0 0px 0px 2px inset;
+}
+
+.btnWrap a.btn-0:hover {
+  color: rgba(0, 0, 0, 0.85);
+  box-shadow: rgba(255, 255, 255, 0.722) 0 80px 0px 2px inset;
+}
+
+.btnWrap a img {
+  filter: invert(30%) sepia(0%) saturate(1%) hue-rotate(27deg) brightness(114%) contrast(95%);
+}
+
+.btnWrap a:hover img {
+  filter: invert(15%) sepia(0%) saturate(1%) hue-rotate(27deg) brightness(114%) contrast(95%);
+  transition-delay: 150ms;
+}
+
+#sticky-footer {
+  display: none;
+}
+
+@media (min-width:992px) {
+  #sticky-footer {
+    display: flex !important;
+  }
+
+  iframe {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gallery {
+  margin-right: 13px;
+  margin-left: 13px;
+}
+
+
+.card-text {	
+	font-weight: 200;
+	font-style: normal;
+	font-size: 10pt;
+	line-height: 14pt;
+}
+
+@media (min-width:1090px) {
+  .card-text {
+    font-size: 13pt;
+    line-height: 18pt;
+
+  }
+}

@@ -1,11 +1,8 @@
 .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   width: 400px;
   padding: 40px;
   margin: 20px auto;
-  transform: translate(-50%, -55%);
   background: rgba(0,0,0,.9);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -152,50 +149,34 @@
   font-size: 14px;
 }
 
-
-/* Style for messages block */
-ul.messages {
-  position:absolute;
-  top: 30%;
-  list-style: none;
-  right: 10px;
-  padding: 0;
-  max-width: 400px; /* Limit the width of the block */
-  width:100%;
-  border-radius: 5px;
-  
+@media (max-width: 768px) {
+  .login-box {
+    width: 100%
+  }
 }
 
-ul.messages li {
-  color: #333;
-  background-color: #f5f5f5;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-  max-width: 400px;
-  text-align: center;
+.logg {
+  margin-top: 8rem;
 }
 
-ul.messages li.error {
-  color: #c0392b;
-  background-color: #f9dcdc;
-} 
-
-ul.messages li.success {
-  color: #27ae60;
-  background-color: #e4f9eb;
+.calendar td:not(:empty) {
+  transition: background-color 0.3s ease; /* Transition background-color over 0.3 seconds with ease-in-out timing */
+  border-radius: 50px; /* Add rounded corners */
 }
 
-ul.messages li.warning {
-  color: #e67e22;
-  background-color: #fce8d5;
+.calendar td:not(:empty):hover {
+  background-color: #f9f9f9; /* New background color on hover */
+  color: black
 }
 
-/* Style for login-box */
-.login-box {
-  width: 300px;
-  margin: 0 auto; /* Center the login box horizontally */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.calendar mark:not(:empty)  {
+  background-color: #fae900; /* Set the background color to the desired highlight color */
+  border-radius: 5px; /* Adjust the border radius to control the roundness */
+  padding: 2px 5px; /* Add padding to control the spacing around the highlighted text */
+  opacity: 0.75;
+}
+
+.calendar td:hover mark:not(:empty) {
+  background-color: #f9f9f9; /* New background color on hover */
+  color: black;
 }

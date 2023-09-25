@@ -4,7 +4,6 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/email.css' %}">
   <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
 {% endblock %}
@@ -15,66 +14,36 @@
       <div class="col-md-6 order-md-1 d-flex align-items-center">
         <div class="maintext justify-content-center">
           <blockquote class="blockquote quotemain text-end rounded">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <p class="blockquote-footer">
-              Someone famous in <cite>Source Title</cite>
+            <p>Будемо друзями, а не суворими вчителями!</p>
+            <p class="blockquote-footer" >
+              Parrot School
             </p>
           </blockquote>
-          <p class="text-center lead rounded">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui. Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</p>
+          <p class="text-center lead rounded">Вас вітає мовна школа "Parrot School". Вже більше трьох років ми навчаємо дітей та дорослих англійської мови на Салтівці. Ми дуже відповідально ставимося до нашої роботи, створюючи комфортні умови для навчання: ми розробляємо зручний розклад, розширюємо викладацький склад, використовуємо найкращі матеріали та розумно структуруємо групи. Протягом декількох років ми створили справжню спільноту. Проводячи офлайн івенти, ми даємо можливість розширити коло знайомств, а групова та проєктна робота дозволяє нам будувати справжні команди всередині кожної групи.</p>
         </div>
       </div>
       <div class="col-md-6 order-sm-2 d-flex align-items-center justify-content-center">
-        <img alt="Main" src="https://picsum.photos/536/354.jpg" class="rounded img-fluid" style="max-width: 100%" width="100%" height="auto" />
+        <img alt="Main" src="/media/photos/supryshka-3_Large.jpeg" class="rounded img-fluid" style="max-width: 100%" width="100%" height="auto" />
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-md-12">
-        <h3 class="text-center">Наши учителя</h3>
+        <h3 class="text-center">Наші вчителі</h3>
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="col-md-4">
-        <div class="card bg-dark text-white text-center">
-          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
-          <div class="card-img-overlay d-flex flex-column justify-content-end">
-            <h5 class="card-title">Dima</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card bg-dark text-white text-center">
-          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
-          <div class="card-img-overlay d-flex flex-column justify-content-end">
-            <h5 class="card-title">Dima</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card bg-dark text-white text-center">
-          <img alt="Teacher" src="https://picsum.photos/500/500.jpg" class="card-img" width="auto" height="auto" />
-          <div class="card-img-overlay d-flex flex-column justify-content-end">
-            <h5 class="card-title">Dima</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include 'inc/_teachers.html' %}
     <div class="row mb-5">
       <div class="col-md-12">
           {% include 'inc/_reviews.html' %}
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="col-md-12">
-        <h5 class="text-center">Выберите пакет:</h5>
-        {% include 'inc/_email.html' %}
+      <div class="col-md-12 mb-3">
+        <h5 class="text-center">ОБЕРІТЬ ПАКЕТ:</h5>
       </div>
+        {% include 'inc/_email.html' %}
     </div>
     {% include 'inc/_gallery.html' %}
   </div>
+{% include 'inc/_modal.html' %}
 {% endblock %}
+

@@ -12,3 +12,7 @@ $(document).ready(function(){
           $(this).removeClass('transition');
       });
   });
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});

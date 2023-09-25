@@ -1,0 +1,39 @@
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div id="container">
+          <div class="modal-header justify-content-center">
+            <h1 class="modal-title" id="contactModalLabel">&bull; Напишіть нам &bull;</h1>
+          </div>
+          <div class="underline mb-3">
+          </div>
+          <div class="modal-body m-4 text-dark">
+            <form id="contact-form" method="post" action="{% url 'main:home' %}">
+              {% csrf_token %}
+            <div class="name">
+              {{ form.name }}
+            </div>
+            <div class="email">
+              <div id="email-error" class="error-message">
+              {{ form.email.errors }}
+              </div>
+              {{ form.email }}
+            </div>
+            <div class="telephone">
+              {{ form.phone }}
+            </div>
+            <div class="subject">
+              {{ form.subject }}
+            </div>
+            <div class="message">
+              {{ form.message }}
+            </div>
+            <div class="submit text-center">
+              <input type="submit" value="Submit" id="form_button" disabled>
+            </div>
+            </form>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
