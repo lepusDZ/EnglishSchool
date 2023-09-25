@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container-sm logg d-flex justify-content-center align-items-center">
   {% if messages %}
-    <ul class="messages" align="right">
       {% for message in messages %}
-        <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        <p align="center" style="color:red" {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</p>
       {% endfor %}
-    </ul>
   {% endif %}
-  <div class="login-box">
+  <div class="login-box ">
     <h1>Логін</h1>
     <form method="post">
       {% csrf_token %}
@@ -24,4 +23,5 @@
       </center>
     </form>
   </div>
+</div>
 {% endblock content %}

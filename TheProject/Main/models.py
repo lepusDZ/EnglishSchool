@@ -1,5 +1,4 @@
 from django.db import models
-from django_quill.fields import QuillField
 from django.urls import reverse
 
 class Main(models.Model):

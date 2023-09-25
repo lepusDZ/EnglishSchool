@@ -1,6 +1,6 @@
 .testimonial {
     text-align: center;
-    padding: 85px 50px 45px 70px;
+    padding: 85px 50px 45px 50px;
     margin: 70px 15px 35px;
     background: #f9f9f9;
     box-shadow: 8px 4px 0 0 #77a9dd;
@@ -93,3 +93,4 @@
     width: 22px;
     height: 12px;
 }
+

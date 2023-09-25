@@ -1,11 +1,8 @@
 .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   width: 400px;
   padding: 40px;
   margin: 20px auto;
-  transform: translate(-50%, -55%);
   background: rgba(0,0,0,.9);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -152,50 +149,119 @@
   font-size: 14px;
 }
 
-
-/* Style for messages block */
-ul.messages {
-  position:absolute;
-  top: 30%;
-  list-style: none;
-  right: 10px;
-  padding: 0;
-  max-width: 400px; /* Limit the width of the block */
-  width:100%;
-  border-radius: 5px;
+@media (max-width: 768px) {
+  .login-box {
+    width: 100%
+  }
   
+.calendar th,
+.calendar td {
+            width: 14.28%; /* Equal width for each column (7 columns in total) */
+            padding: 1px;
+            font-size: smaller;
+        }
+      }
+
+.logg {
+  margin-top: 8rem;
 }
 
-ul.messages li {
-  color: #333;
-  background-color: #f5f5f5;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-  max-width: 400px;
+.calendar td:not(:empty) {
+  transition: background-color 0.3s ease; /* Transition background-color over 0.3 seconds with ease-in-out timing */
+  border-radius: 50px; /* Add rounded corners */
+}
+
+.calendar td:not(:empty):hover {
+  background-color: #f9f9f9; /* New background color on hover */
+  color: black
+}
+
+.calendar mark#yellow:not(:empty)  {
+  background-color: yellow; /* Set the background color to the desired highlight color */
+  border-radius: 5px; /* Adjust the border radius to control the roundness */
+  padding: 2px 5px; /* Add padding to control the spacing around the highlighted text */
+  opacity: 0.90;
+}
+
+.calendar mark#gray:not(:empty)  {
+  background-color: #d0cdcd; /* Set the background color to the desired highlight color */
+  border-radius: 5px; /* Adjust the border radius to control the roundness */
+  padding: 2px 5px; /* Add padding to control the spacing around the highlighted text */
+  opacity: 0.50;
+}
+.calendar td:hover mark#gray:not(:empty) {
+  background-color: #f9f9f9; /* New background color on hover */
+  color: black;
+}
+
+.calendar td:hover mark#yellow:not(:empty) {
+  background-color: #f9f9f9; /* New background color on hover */
+  color: black;
+}
+
+
+[aria-label][tooltip-position] {
+  position: relative;
+  letter-spacing: 0.1rem;
+}
+
+[aria-label][tooltip-position]::before,
+[aria-label][tooltip-position]::after {
+  --scale: 0;
+  position: absolute;
+  font-size: 1rem;
+  transition: transform 200ms;
+  transition-timing-function: linear;
+}
+
+[aria-label][tooltip-position]:hover::before,
+[aria-label][tooltip-position]:hover::after {
+  --scale: 1;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.45, 1.93);
+}
+
+[aria-label][tooltip-position]::before {
+  content: attr(aria-label);
+  background-color: var(--tooltip-color);
+  padding: 0.5em;
+  border-radius: 0.3em;
+  width: max-content;
+  max-width: 150px;
   text-align: center;
+  transform: scale(0);
+  z-index: 1000;
 }
 
-ul.messages li.error {
-  color: #c0392b;
-  background-color: #f9dcdc;
-} 
-
-ul.messages li.success {
-  color: #27ae60;
-  background-color: #e4f9eb;
+[aria-label][tooltip-position]::after {
+  content: "";
+  border: var(--arrow-size) solid transparent;
 }
 
-ul.messages li.warning {
-  color: #e67e22;
-  background-color: #fce8d5;
+[aria-label][tooltip-position]::before,
+[aria-label][tooltip-position]::after {
+  --tooltip-color: #d8d8d8;
+  --arrow-size: 0.5rem;
+  --scale: 0;
+
+  z-index: 1000;
+  font-size: 1rem;
+  transform: translate(var(--translate-x), var(--translate-y))
+    scale(var(--scale));
+}
+[aria-label][tooltip-position="top"]::before {
+  position: absolute;
+  --translate-x: -50%;
+  --translate-y: calc(-100% - var(--arrow-size));
+  top: 0px;
+  left: 50%;
+  transform-origin: bottom center;
 }
 
-/* Style for login-box */
-.login-box {
-  width: 300px;
-  margin: 0 auto; /* Center the login box horizontally */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+[aria-label][tooltip-position="top"]::after {
+  --translate-x: -50%;
+  --translate-y: calc(-1 * var(--arrow-size));
+  top: 0px;
+  left: 50%;
+  border-top-color: var(--tooltip-color);
+  transform-origin: bottom center;
 }

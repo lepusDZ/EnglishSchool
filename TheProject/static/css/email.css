@@ -1,68 +1,278 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 .container {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(20, 21, 21, 0.384);
-    border-radius: 12px;
-    padding: 38px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 38px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
 }
 
 .wrapper {
-    width: 100%;
-    height: 100%;
-    margin-right: 1rem;
+  width: 100%;
+  height: 100%;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+.wrapper p {
+  text-align: center;
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.banner-image {
+  width: 100%; /* Set the width to 100% for proportional resizing */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100px; /* Set the maximum width to 100px */
+  max-height: 100px; /* Set the maximum height to 100px */
+}
 
 .button-wrapper {
-    margin-top: 18px;
+  margin-top: 18px;
+}
+
+@media (max-width: 768px) {
+  .banner-image {
+    width: 50%
+  }
 }
 
 .btn {
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 12px;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    cursor: pointer;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .btn+.btn {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .outline {
-    background: transparent;
-    color: rgba(0, 212, 255, 0.9);
-    border: 1px solid rgba(0, 212, 255, 0.6);
-    transition: all .3s ease;
-
+  background: transparent;
+  color: rgba(32, 107, 122, 0.9);
+  border: 1px solid rgba(25, 95, 110, 0.6);
+  transition: all .3s ease;
 }
 
 .outline:hover {
-    transform: scale(1.125);
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.9);
-    transition: all .3s ease;
+  transform: scale(1.125);
+  color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 0, 0, 0.9);
+  transition: all .3s ease;
 }
 
 .fill {
-    background: rgba(0, 212, 255, 0.9);
-    color: rgba(255, 255, 255, 0.95);
-    filter: drop-shadow(0);
-    font-weight: bold;
-    transition: all .3s ease;
+  background: rgba(3, 77, 92, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease;
 }
 
 .fill:hover {
-    transform: scale(1.125);
-    border-color: rgba(255, 255, 255, 0.9);
-    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
-    transition: all .3s ease;
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+  transition: all .3s ease;
+}
+
+#container {
+  border: solid 3px #474544;
+  max-width: 768px;
+  position: relative;
+}
+
+
+#contactModal h1 {
+  color: #474544;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#contactModal .underline {
+  border-bottom: solid 2px #474544;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+
+
+#contactModal .email {
+  float: right;
+  width: 45%;
+}
+
+#contactModal input[type='text'],
+[type='email'],
+select,
+textarea {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #474544;
+  color: #474544;
+  font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0em 0 1.8752em 0;
+  padding: 0 0 0.4em 0;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#contactModal input[type='text']:focus,
+[type='email']:focus,
+textarea:focus {
+  outline: none;
+  padding: 0 0 0.875em 0;
+}
+
+#contactModal .message {
+  float: none;
+}
+
+#contactModal .name {
+  float: left;
+  width: 45%;
+}
+
+
+#contactModal .subject {
+  width: 100%;
+}
+
+#contactModal .telephone {
+  width: 100%;
+}
+
+#contactModal textarea {
+  line-height: 150%;
+  height: 150px;
+  resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: #474544;
+}
+
+:-moz-placeholder {
+  color: #474544;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: #474544;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #474544;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #474544;
+  color: #474544;
+  cursor: pointer;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #474544;
+  color: #F2F3EB;
+}
+
+#form_button:disabled,
+#form_button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .underline {
+    width: 68px;
+  }
+
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+
+
+  .underline {
+    width: 53px;
+  }
+
+  input[type='text'],
+  [type='email'],
+  select,
+  textarea {
+    font-size: 0.875em;
+  }
+}
+
+
+.modal {
+  --bs-modal-width: 650px;
+}
+
+
+.error-message {
+  color: red;
+  /* Change this to your desired error color */
 }
