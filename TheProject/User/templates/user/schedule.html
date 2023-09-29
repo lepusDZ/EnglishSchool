@@ -30,7 +30,7 @@
                                 {% for week in weeks_in_month %}
                             <tr>
                                 {% for day in week %}
-                                    {% if day in homework_by_day.keys and day > today.day %}
+                                    {% if day in homework_by_day.keys and day >= today.day %}       
                                         <td aria-label="{% get_homework_name day homework_by_day %}" tooltip-position="top">
                                             <mark id="yellow"><a style="color: inherit; text-decoration: none" href="{% get_homework_file day homework_by_day %}" target="_blank">{{ day }}</a></mark>
                                         </td>
