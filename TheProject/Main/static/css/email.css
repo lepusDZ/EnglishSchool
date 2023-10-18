@@ -123,7 +123,6 @@
 [type='email'],
 select,
 textarea {
-  background: none;
   border: none;
   border-bottom: solid 2px #474544;
   color: #474544;
@@ -275,4 +274,8 @@ textarea:focus {
 .error-message {
   color: red;
   /* Change this to your desired error color */
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-bottom: solid 2px rgb(167, 52, 52) !important;
 }

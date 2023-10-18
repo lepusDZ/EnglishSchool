@@ -1,4 +1,4 @@
-from .models import Homework
+from .models import Homework, CustomUser
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
@@ -8,6 +8,16 @@ from django.views.generic import TemplateView
 from datetime import datetime
 from calendar import monthrange
 from django.utils import timezone
+from django.utils.timezone import activate
+
+# bot stuff
+import json
+import requests
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.views.decorators.csrf import csrf_exempt
+from .botCr import TELEGRAM_API_URL
+import re
+from .usertasks import *
 
 def register_request(request):
     if request.method == "POST":
@@ -97,14 +107,12 @@ class Schedule(TemplateView):
 
         # Calculate the days of the month
         days_in_month = padding_days + [int(i) for i in range(1, num_days_in_month + 1)]
-        print(days_in_month)
         # Create a grid of days for the entire month
         weeks_in_month = [days_in_month[i:i+7] for i in range(0, len(days_in_month), 7)]
         
         #
         
         homework = Homework.objects.filter(user=user, date__gte=first_day_of_month, date__lte=last_day_of_month).order_by("date")
-        print(homework)
         
         homework_by_day = {}
 
@@ -113,9 +121,7 @@ class Schedule(TemplateView):
             if day not in homework_by_day:
                 homework_by_day[day] = []
             homework_by_day[day].append(hw)
-        
-        print(homework_by_day)
-            
+                    
         context['user'] = user
         context['weeks_in_month'] = weeks_in_month
         context['month_name'] = today.strftime("%B %Y")
@@ -124,3 +130,59 @@ class Schedule(TemplateView):
         context['homework_by_day'] = homework_by_day
         
         return context
+
+@csrf_exempt
+def telegram_bot(request):
+    if request.method == 'POST':
+        update = json.loads(request.body.decode('utf-8'))
+        handle_update(update)
+        return HttpResponse('ok')
+    else:
+        return HttpResponseBadRequest('Bad Request')
+
+def handle_update(update):
+    chat_id = update['message']['chat']['id']
+    text = update['message']['text']
+    user = CustomUser.objects.filter(telegram_id=chat_id).first()
+    match = re.match(r"/start\s(\d+)$", text)
+
+
+    if user:
+        if text == "/hw":
+            homework = Homework.objects.filter(user=user, date__gte=datetime.today()).order_by("date")
+            if homework:
+                answer = ""
+                for hw in homework:
+                    hw.date = hw.date.astimezone(timezone.get_current_timezone())
+
+                    answer += f"Title: {hw.title}\nDescription: {hw.description}\nDue date: {hw.date.strftime('%Y-%m-%d %H:%M')}\nHomework file: {hw.file}\n\n"
+                    
+                send_message("sendMessage", {
+                        'chat_id': chat_id,
+                        'text': answer
+                    })
+            else:
+                send_message("sendMessage", {
+                        'chat_id': chat_id,
+                        'text': 'There is no upcoming homework, yay!'
+                    })
+        else:
+            send_message("sendMessage", {
+                    'chat_id': chat_id,
+                    'text': 'Please use /hw to see the upcoming homework'
+                })
+    elif not user and match:
+         integer_part = match.group(1)
+         user = CustomUser.objects.get(pk=integer_part)
+         user.telegram_id = chat_id
+         user.save()
+         send_message("sendMessage", {
+                    'chat_id': chat_id,
+                    'text': f'This chat id was assigned to the user {user.first_name} {user.last_name}'
+                })
+    else:
+        send_message("sendMessage", {
+                    'chat_id': chat_id,
+                    'text': 'Visit our website for more information -\nYou can connect your telegram to your account in the schedule tab'
+                })
+

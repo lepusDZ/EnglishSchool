@@ -6,7 +6,7 @@ from .forms import HomeworkForm
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal Info', {'fields': ('date_of_birth', 'first_name', 'last_name')}),
+        ('Personal Info', {'fields': ('date_of_birth', 'first_name', 'last_name', 'telegram_id')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
         ('Important dates', {'fields': ('last_login',)}),
     )
@@ -24,6 +24,7 @@ class CustomUserAdmin(UserAdmin):
 class HomeworkAdmin(admin.ModelAdmin):
     form = HomeworkForm
     list_display = ('title', 'description', 'date', 'file')
+    exclude = ('celery_task_id',)
     
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Homework, HomeworkAdmin)
