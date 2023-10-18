@@ -9,6 +9,13 @@
 {% endblock %}
 
 {% block content %}
+{% for message in messages %}
+<div class="container messages justify-content-center p-0">
+  <div class="alert {{ message.tags }} col-md-6" role="alert" >
+    {{ message|safe }}
+  </div>
+</div>
+{% endfor %}
   <div class="container-fluid">
     <div class="row mt-5 justify-content-center">
       <div class="col-md-6 order-md-1 d-flex align-items-center">

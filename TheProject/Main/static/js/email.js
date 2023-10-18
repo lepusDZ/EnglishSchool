@@ -1,32 +1,28 @@
 $(document).ready(function () {
     $('.btn.outline').on('click', function (event) {
       var subject = $(this).data('subject');
-      console.log(subject);
       $('#id_subject').val(subject);
       $('#contactModal').modal('show');
     });
   });
   
 
-$(document).ready(function() {
-  var emailInput = $('#id_email');
-  var emailError = $('#email-error');
-  var submitButton = $('#form_button');
-  var isInputValid = false; // Track input validity
+(function () {
+  'use strict'
 
-  emailInput.on('input', function() {
-      isInputValid = /\S+@\S+\.\S+/.test(emailInput.val()); // Basic email format check
-  });
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
 
-  emailInput.on('blur', function() {
-      if (!isInputValid && emailInput.val().trim() !== '') {
-          emailError.text('Введіть коректний емейл');
-          emailError.addClass('error-message'); // Add error message class
-          submitButton.prop('disabled', true);
-      } else {
-          emailError.text('');
-          emailError.removeClass('error-message'); // Remove error message class
-          submitButton.prop('disabled', false);
-      }
-  });
-});
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
