@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/email.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mb-5 mt-5">
+        <div class="col-md-6 btnWrap">
+            <center><h1><b>Напишіть нам:</b></h1></center>
+            <a class="btn-0" href="https://www.instagram.com/parrot_school/" target="_blank"><img src="/media/inst.png" class="me-3" style="width: 40px;">Instagram</a>
+            <a class="btn-0" href="https://t.me/SkripkaPeter" target="_blank"><img src="/media/telegram.png" class="me-3" style="width: 40px;">Telegram</a>
+            <a class="btn-0" href="https://www.facebook.com/profile.php?id=100088434182654" target="_blank"><img src="/media/facebook.png" class="me-3" style="width: 40px;">Facebook</a>
+            <a class="btn-0" href="mailto: abc@example.com"><img src="/media/mail.png" class="me-3" style="width: 40px;">Email</a>
+        </div>
+        <div class="col-md-6 map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563.768185321806!2d36.3275205764476!3d50.015700018571536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412709e02473e745%3A0xb1abe69b7df36b4f!2sValentynivska%20St%2C%2018%D0%B2%2C%20Kharkiv%2C%20Kharkivs&#39;ka%20oblast%2C%20Ukraine%2C%2061170!5e0!3m2!1sen!2sca!4v1692985909893!5m2!1sen!2sca" class="rounded"  height="600px" width="400px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h5 class="text-center">ОБЕРІТЬ ПАКЕТ:</h5>
+    {% include 'inc/_email.html' %}
+        </div>
+    </div>
+</div>
+{% include 'inc/_modal.html' %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% load random_images %}
+
+<div class="gallery">
+  <div class="row">
+    {% random_images request count=8 as image_list %}
+    {% for image_info in image_list %}
+    <div class="col-lg-3 mb-3 thumb">
+      <a href="{{ image_info.url }}" class="fancybox" rel="ligthbox">
+        <img src="{{ image_info.url }}" class="zoom img-fluid" alt="" />
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

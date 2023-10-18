@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-sm logg d-flex justify-content-center align-items-center">
+  <div class="login-box ">
+    {% if messages %}
+      {% for message in messages %}
+        <p align="center" style="color:red" {% if message.tags %}class="{{ message.tags }}"{% endif %}>Неправільний логін чи пароль. Зауважте, що обидва поля чутливі до регістру.
+        </p>
+      {% endfor %}
+  {% endif %}
+    <h1>Логін</h1>
+    <form method="post" novalidate class="needs-validation">
+      {% csrf_token %}
+      <div class="user-box">
+        {{ login_form.username }}
+        <label>Емейл</label>
+      </div>
+      <div class="user-box">
+        {{ login_form.password }}
+        <label>Пароль</label>
+      </div>
+      <center>
+        <button class="login button" type="submit">Увійти</button>
+      </center>
+    </form>
+  </div>
+</div>
+{% endblock content %}
