@@ -3,9 +3,9 @@ from django.core.validators import EmailValidator
 
 
 LESSON_CHOICES= [
-    ('solo', 'Груповий'),
+    ('solo', 'Індивідуальний'),
     ('duo', 'Дуо'),
-    ('group', 'Індивідуальний'),
+    ('group', 'Груповий'),
     ]
 
 class ContactForm(forms.Form):

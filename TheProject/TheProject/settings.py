@@ -157,7 +157,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 ALLOWED_HOSTS = ['*'] #Change
-CSRF_TRUSTED_ORIGINS = ['https://17e0-184-144-87-174.ngrok-free.app'] #Change
+CSRF_TRUSTED_ORIGINS = ['https://5a9b-184-144-87-174.ngrok-free.app'] #Change
 
 
 # Celery, figure out later

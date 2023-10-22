@@ -60,7 +60,6 @@ def homework_deleted(sender, instance, **kwargs):
     if task_ids:
             try:
                 app.control.revoke(task_ids, terminate=False)
-                app.control.revoke(task_ids, terminate=True)
             except TimeoutError as e:
                 print(e)
 
