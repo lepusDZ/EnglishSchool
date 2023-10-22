@@ -157,17 +157,17 @@ def handle_update(update):
 
                     answer += f"Title: {hw.title}\nDescription: {hw.description}\nDue date: {hw.date.strftime('%Y-%m-%d %H:%M')}\nHomework file: {hw.file}\n\n"
                     
-                send_message("sendMessage", {
+                send_message({
                         'chat_id': chat_id,
                         'text': answer
                     })
             else:
-                send_message("sendMessage", {
+                send_message({
                         'chat_id': chat_id,
                         'text': 'There is no upcoming homework, yay!'
                     })
         else:
-            send_message("sendMessage", {
+            send_message({
                     'chat_id': chat_id,
                     'text': 'Please use /hw to see the upcoming homework'
                 })
@@ -176,12 +176,12 @@ def handle_update(update):
          user = CustomUser.objects.get(pk=integer_part)
          user.telegram_id = chat_id
          user.save()
-         send_message("sendMessage", {
+         send_message({
                     'chat_id': chat_id,
                     'text': f'This chat id was assigned to the user {user.first_name} {user.last_name}'
                 })
     else:
-        send_message("sendMessage", {
+        send_message({
                     'chat_id': chat_id,
                     'text': 'Visit our website for more information -\nYou can connect your telegram to your account in the schedule tab'
                 })
