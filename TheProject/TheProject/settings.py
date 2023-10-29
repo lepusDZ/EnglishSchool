@@ -155,7 +155,8 @@ EMAIL_PORT = 587  # Use 587 for TLS, or 465 for SSL
 EMAIL_HOST_USER = 'noreply@parrotschool.kh.ua'
 EMAIL_HOST_PASSWORD = 'ticnUv-fuqgi9-sojpag'
 EMAIL_USE_TLS = True  # Set to True for TLS or False for non-SSL settings
-EMAIL_USE_SSL = False 
+EMAIL_USE_SSL = False  # Set to True for SSL, or False for non-SSL settings
+
 ALLOWED_HOSTS = ['parrotschool.kh.ua', 'www.parrotschool.kh.ua', 'mail.parrotschool.kh.ua'] #Change
 
 # Celery, figure out later
