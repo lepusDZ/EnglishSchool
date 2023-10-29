@@ -1,0 +1,32 @@
+.calendar {
+    min-width: 375px;
+  }
+  .calendar td {
+    padding: 15px 0 !important;
+    min-width: 50px;
+  }
+  .calendar-wrap .btn-link {
+    color: #fff;
+  }
+  .calendar .btn-link {
+    color: #fff;
+    text-decoration: none !important;
+    border-radius: 50px;
+    min-width: 50px;
+  }
+  .calendar .btn-link:hover, .calendar .btn-link.active {
+    background-color: #fff;
+    color: #222;
+  }
+
+  .avatar-group {
+    position: relative;
+    z-index: 2;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .avatar-circle {
+      border-radius: 50%;
+  }

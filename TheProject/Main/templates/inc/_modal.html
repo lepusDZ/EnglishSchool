@@ -1,0 +1,42 @@
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div id="container">
+          <div class="modal-header justify-content-center">
+            <h1 class="modal-title" id="contactModalLabel">&bull; Напишіть нам &bull;</h1>
+          </div>
+          <div class="underline mb-3">
+          </div>
+          <div class="modal-body m-4 text-dark">
+            <form class="needs-validation" id="contact-form" method="post" action="{% url 'main:home' %}" novalidate>
+              {% csrf_token %}
+            <div class="name">
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+              {{ form.name }}
+            </div>
+            <div class="email">
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+              {{ form.email }}
+            </div>
+            <div class="telephone">
+              {{ form.phone }}
+            </div>
+            <div class="subject">
+              {{ form.subject }}
+            </div>
+            <div class="message">
+              {{ form.message }}
+            </div>
+            <div class="submit text-center">
+              <input type="submit" value="Submit" id="form_button">
+            </div>
+            </form>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>

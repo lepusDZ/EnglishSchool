@@ -1,0 +1,243 @@
+/* style.css */
+
+body {
+  background-color: #232C33;
+  color: white;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Open Sans', sans-serif;
+  /*font-weight: lighter;*/
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.navbar-collapse {
+  background: #f9f9f9;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #f9f9f9;
+  /* Use 'flex' instead of 'display: flex' */
+  flex-direction: row;
+  /* Set the background of the .navbar to transparent */
+  justify-content: center;
+  /* Horizontally center the items */
+  align-items: center;
+  /* Vertically center the items */
+  height: 55px;
+  /* Set the height of the navbar as needed */
+  /* Adjust the path to your navbar background image */
+  background-size: cover;
+  /* Scale the background image to cover the navbar */
+  background-repeat: no-repeat;
+  /* Prevent the background image from repeating */
+  background-position: center;
+  /* Center the background image */
+  z-index: 1000; /* Adjust this value as needed */
+}
+
+
+.navbar-brand img {
+  padding-left: 10px;
+}
+
+.carousel-inner img {
+  max-width: 300px;
+  /* Set the maximum width for the images */
+  max-height: 200px;
+  /* Set the maximum height for the images */
+  margin: auto;
+  /* Center the images horizontally within the carousel */
+  display: block;
+  /* Ensure the images are displayed as block elements */
+}
+
+/* Adjust the carousel container size */
+#photoCarousel {
+  max-width: 600px;
+  /* Set the maximum width for the carousel container */
+  margin: 0 auto;
+  /* Center the carousel horizontally on the page */
+  padding: 10px;
+  /* Optional: Add some padding to the carousel container */
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: visible;
+  opacity: 1;
+}
+
+#demo {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+img.zoom {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+}
+
+
+.transition {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.modal-header {
+
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #000;
+}
+
+.modal-footer {
+  display: none;
+}
+
+
+.map {
+  position: relative;
+  padding-bottom: 30%;
+  height: 0;
+  overflow: hidden;
+}
+
+.btnWrap a {
+  -webkit-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 1000ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 15px 20px;
+}
+
+.btnWrap a.btn-0 {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(249, 249, 249, 0.558) 0 0px 0px 2px inset;
+}
+
+.btnWrap a.btn-0:hover {
+  color: rgba(0, 0, 0, 0.85);
+  box-shadow: rgba(255, 255, 255, 0.722) 0 80px 0px 2px inset;
+}
+
+.btnWrap a img {
+  filter: invert(30%) sepia(0%) saturate(1%) hue-rotate(27deg) brightness(114%) contrast(95%);
+}
+
+.btnWrap a:hover img {
+  filter: invert(15%) sepia(0%) saturate(1%) hue-rotate(27deg) brightness(114%) contrast(95%);
+  transition-delay: 150ms;
+}
+
+#sticky-footer {
+  display: none;
+}
+
+@media (min-width:992px) {
+  #sticky-footer {
+    display: flex !important;
+  }
+
+  .map iframe {
+    padding-right: calc(var(--bs-gutter-x) * .5);
+  }
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gallery {
+  margin-right: 13px;
+  margin-left: 13px;
+}
+
+
+.card-text {	
+	font-weight: 200;
+	font-style: normal;
+	font-size: 10pt;
+	line-height: 14pt;
+}
+
+@media (min-width:1090px) {
+  .card-text {
+    font-size: 13pt;
+    line-height: 18pt;
+
+  }
+}
+
+.messages {
+  background-color: #232C33 !important;
+}

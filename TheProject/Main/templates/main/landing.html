@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/email.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+{% endblock %}
+
+{% block content %}
+{% for message in messages %}
+<div class="container messages justify-content-center p-0">
+  <div class="alert {{ message.tags }} col-md-6" role="alert" >
+    {{ message|safe }}
+  </div>
+</div>
+{% endfor %}
+  <div class="container-fluid">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-6 order-md-1 d-flex align-items-center">
+        <div class="maintext justify-content-center">
+          <blockquote class="blockquote quotemain text-end rounded">
+            <p>Будемо друзями, а не суворими вчителями!</p>
+            <p class="blockquote-footer" >
+              Parrot School
+            </p>
+          </blockquote>
+          <p class="text-center lead rounded">Вас вітає мовна школа "Parrot School". Вже більше трьох років ми навчаємо дітей та дорослих англійської мови на Салтівці. Ми дуже відповідально ставимося до нашої роботи, створюючи комфортні умови для навчання: ми розробляємо зручний розклад, розширюємо викладацький склад, використовуємо найкращі матеріали та розумно структуруємо групи. Протягом декількох років ми створили справжню спільноту. Проводячи офлайн івенти, ми даємо можливість розширити коло знайомств, а групова та проєктна робота дозволяє нам будувати справжні команди всередині кожної групи.</p>
+        </div>
+      </div>
+      <div class="col-md-6 order-sm-2 d-flex align-items-center justify-content-center">
+        <img alt="Main" src="/media/photos/supryshka-3_Large.jpeg" class="rounded img-fluid" style="max-width: 100%" width="100%" height="auto" />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3 class="text-center">Наші вчителі</h3>
+      </div>
+    </div>
+    {% include 'inc/_teachers.html' %}
+    <div class="row mb-5">
+      <div class="col-md-12">
+          {% include 'inc/_reviews.html' %}
+      </div>
+    </div>
+      <div class="col-md-12 mb-3">
+        <h5 class="text-center">ОБЕРІТЬ ПАКЕТ:</h5>
+      </div>
+        {% include 'inc/_email.html' %}
+    </div>
+    {% include 'inc/_gallery.html' %}
+  </div>
+{% include 'inc/_modal.html' %}
+{% endblock %}
+
