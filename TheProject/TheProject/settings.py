@@ -156,9 +156,7 @@ EMAIL_HOST_PASSWORD = 'gzagylmcpczidsun'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-ALLOWED_HOSTS = ['*'] #Change
-CSRF_TRUSTED_ORIGINS = ['https://5a9b-184-144-87-174.ngrok-free.app'] #Change
-
+ALLOWED_HOSTS = ['parrotschool.kh.ua', 'www.parrotschool.kh.ua', 'mail.parrotschool.kh.ua'] #Change
 
 # Celery, figure out later
 
