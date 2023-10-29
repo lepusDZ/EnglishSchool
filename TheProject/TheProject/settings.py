@@ -25,7 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+d8r(24@i#vzux!@1nql_kfn28wm!&$^vvm*pky9ea1)17o-%c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = True
+=======
+DEBUG = False
+>>>>>>> 206ae2497943488eea04a91f2dce3a50304b486a
 
 ALLOWED_HOSTS = []
 
@@ -149,12 +153,21 @@ LANGUAGES = [
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+<<<<<<< HEAD
 EMAIL_HOST = 'mail.parrotschool.kh.ua'
 EMAIL_PORT = 587  # Use 587 for TLS, or 465 for SSL
 EMAIL_HOST_USER = 'noreply@parrotschool.kh.ua'
 EMAIL_HOST_PASSWORD = 'ticnUv-fuqgi9-sojpag'
 EMAIL_USE_TLS = True  # Set to True for TLS or False for non-SSL settings
 EMAIL_USE_SSL = False 
+=======
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'emailgarant2@gmail.com'
+EMAIL_HOST_PASSWORD = 'gzagylmcpczidsun'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+>>>>>>> 206ae2497943488eea04a91f2dce3a50304b486a
 
 ALLOWED_HOSTS = ['parrotschool.kh.ua', 'www.parrotschool.kh.ua', 'mail.parrotschool.kh.ua'] #Change
 
