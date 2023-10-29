@@ -20,7 +20,7 @@ def send_mail(name, email, message, subject, phone):
     adminMessage = EmailMultiAlternatives(
                 subject='Нова форма!',
                 body="",
-                from_email='emailgarant2@gmail.com',
+                from_email='noreply@parrotschool.kh.ua',
                 to=['emailgarant@gmail.com'],
                 reply_to=[email],
                 )
@@ -35,8 +35,8 @@ def email_back(email):
         
         userMessage = EmailMultiAlternatives(
                 subject='Ми отримали ваше повідомлення!',
-                body="mail testing",
-                from_email='emailgarant2@gmail.com',
+                body="",
+                from_email='noreply@parrotschool.kh.ua',
                 to=[email]
                 )
         
