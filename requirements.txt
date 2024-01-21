@@ -1,4 +1,4 @@
-# requirements.txt
+# requirements.txt 
 
 beautifulsoup4==4.12.2
 billiard==4.1.0
