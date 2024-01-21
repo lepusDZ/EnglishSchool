@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+d8r(24@i#vzux!@1nql_kfn28wm!&$^vvm*pky9ea1)17o-%c'
+# SECRET_KEY = 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -153,7 +153,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.parrotschool.kh.ua'
 EMAIL_PORT = 587  # Use 587 for TLS, or 465 for SSL
 EMAIL_HOST_USER = 'noreply@parrotschool.kh.ua'
-EMAIL_HOST_PASSWORD = 'ticnUv-fuqgi9-sojpag'
+# EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True  # Set to True for TLS or False for non-SSL settings
 EMAIL_USE_SSL = False  # Set to True for SSL, or False for non-SSL settings
 
